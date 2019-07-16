@@ -22,4 +22,10 @@ defmodule ThreddrWeb.Router do
     get "/:provider", AuthController, :request
     get "/:provider/callback", AuthController, :callback
   end
+
+  scope "/threads", ThreddrWeb do
+    pipe_through :browser
+
+    get "/new", ThreadsController, :new
+  end
 end
