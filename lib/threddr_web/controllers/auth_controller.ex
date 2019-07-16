@@ -34,4 +34,10 @@ defmodule ThreddrWeb.AuthController do
         |> redirect(to: "/")
     end
   end
+
+  def logout(conn, _params) do
+    conn
+    |> put_session(:current_user, nil)
+    |> redirect(to: "/")
+  end
 end

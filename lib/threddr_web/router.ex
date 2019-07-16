@@ -18,6 +18,7 @@ defmodule ThreddrWeb.Router do
   scope "/auth", ThreddrWeb do
     pipe_through :browser
 
+    delete "/log-out", AuthController, :logout
     get "/:provider", AuthController, :request
     get "/:provider/callback", AuthController, :callback
   end
