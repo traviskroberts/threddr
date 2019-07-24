@@ -14,4 +14,17 @@ import "phoenix_html"
 // Import local files
 //
 // Local files can be imported directly using relative paths, for example:
-// import socket from "./socket"
+import socket from "./socket"
+import $ from 'jquery';
+
+if ($('#js-form-thread').length) {
+  const template = $('#new-tweet-template').html();
+  $('#js-add-tweet').on('click', (e) => {
+    e.preventDefault();
+    const $tweetsContainer = $('.tweets-container')
+    const num = $tweetsContainer.find('textarea').length + 1;
+    const addition = template.replace(/%num%/g, num);
+    $tweetsContainer.append(addition);
+    $tweetsContainer.find('textarea:last').focus();
+  });
+}

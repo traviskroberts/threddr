@@ -1,9 +1,4 @@
-require IEx
 defmodule ThreddrWeb.AuthController do
-  @moduledoc """
-  Auth controller responsible for handling Ueberauth responses
-  """
-
   use ThreddrWeb, :controller
   plug Ueberauth
 
@@ -20,17 +15,26 @@ defmodule ThreddrWeb.AuthController do
   end
 
   def callback(%{assigns: %{ueberauth_auth: auth}} = conn, _params) do
-    IEx.pry
-    case Auth.register(auth) do
-      {:ok, user} ->
+    case auth do
+      %{
+        uid: uid,
+        info: %{name: name, nickname: nickname},
+        credentials: %{token: access_token, secret: acess_token_secret}
+      } ->
+        attrs = %{
+          uid: uid,
+          name: name,
+          username: nickname,
+          access_token: access_token,
+          access_token_secret: acess_token_secret
+        }
         conn
-        |> put_flash(:info, "Successfully authenticated.")
-        |> put_session(:current_user, user)
+        |> put_session(:current_user, attrs)
         |> configure_session(renew: true)
-        |> redirect(to: "/")
-      {:error, _changeset} ->
+        |> redirect(to: "/threads/new")
+      _ ->
         conn
-        |> put_flash(:error, "There was an error creating your account.")
+        |> put_flash(:error, "There was an error authenticating.")
         |> redirect(to: "/")
     end
   end

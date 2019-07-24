@@ -1,1 +1,36 @@
-<h1>New Thread</h1>
+
+<div class="columns">
+  <div class="column is-8 is-offset-2">
+    <h1 class="title">New Thread</h1>
+
+    <form action="#" class="form-threads" id="js-form-thread" method="post">
+      <input type="hidden" id="js-form-token" value="<%= @token %>" />
+
+      <div class="tweets-container" id="js-tweets-container">
+        <div class="js-tweet">
+          <input name="tweets[][num]" type="hidden" value="1" />
+          <textarea class="textarea" name="tweets[][text]"></textarea>
+          <span class="tweet-link" id="js-tweet-link-1"></span>
+        </div>
+      </div>
+
+      <button class="button is-success is-pulled-right" id="js-add-tweet" type="button">
+        + Tweet
+      </button>
+
+      <button class="button is-info" id="js-submit-thread" type="submit">
+        Post Thread
+      </button>
+    </form>
+  </div>
+</div>
+
+<script id="new-tweet-template" type="text/template">
+  <i class="thread-arrow fas fa-arrow-down fa-2x"></i>
+
+  <div class="js-tweet">
+    <input name="tweets[][num]" type="hidden" value="%num%" />
+    <textarea class="textarea" name="tweets[][text]"></textarea>
+    <span class="tweet-link" id="js-tweet-link-%num%"></span>
+  </div>
+</script>

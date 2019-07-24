@@ -4,7 +4,10 @@ defmodule ThreddrWeb.ThreadsController do
   plug :require_current_user
 
   def new(conn, _params) do
-    render(conn, "new.html")
+    user = get_session(conn, :current_user)
+    token = Phoenix.Token.sign(conn, System.get_env("APP_SECRET"), user)
+
+    render(conn, "new.html", token: token)
   end
 
   defp require_current_user(conn, _params) do

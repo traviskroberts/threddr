@@ -26,12 +26,6 @@ defmodule ThreddrWeb.ChannelCase do
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Threddr.Repo)
-
-    unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Threddr.Repo, {:shared, self()})
-    end
-
     :ok
   end
 end

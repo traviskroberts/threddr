@@ -20,7 +20,7 @@ defmodule Threddr.MixProject do
   def application do
     [
       mod: {Threddr.Application, []},
-      extra_applications: [:logger, :runtime_tools, :ueberauth_twitter]
+      extra_applications: [:extwitter, :logger, :runtime_tools, :ueberauth_twitter]
     ]
   end
 
@@ -33,33 +33,21 @@ defmodule Threddr.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:ecto_sql, "~> 3.1"},
+      {:extwitter, "~> 0.9"},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:oauth, github: "tim/erlang-oauth"},
-      {:phoenix_ecto, "~> 4.0"},
       {:phoenix_html, "~> 2.11"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:phoenix_pubsub, "~> 1.1"},
       {:phoenix, "~> 1.4.9"},
       {:plug_cowboy, "~> 2.0"},
       {:poison, "~> 3.0", override: true},
-      {:postgrex, ">= 0.0.0"},
       {:ueberauth_twitter, "~> 0.2"}
     ]
   end
 
-  # Aliases are shortcuts or tasks specific to the current project.
-  # For example, to create, migrate and run the seeds file at once:
-  #
-  #     $ mix ecto.setup
-  #
-  # See the documentation for `Mix` for more info on aliases.
   defp aliases do
-    [
-      "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
-      "ecto.reset": ["ecto.drop", "ecto.setup"],
-      test: ["ecto.create --quiet", "ecto.migrate", "test"]
-    ]
+    []
   end
 end

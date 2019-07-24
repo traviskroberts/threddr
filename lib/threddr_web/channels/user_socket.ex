@@ -2,7 +2,7 @@ defmodule ThreddrWeb.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  # channel "room:*", ThreddrWeb.RoomChannel
+  channel "thread:*", ThreddrWeb.ThreadChannel
 
   # Socket params are passed from the client and can
   # be used to verify and authenticate a user. After
