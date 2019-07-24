@@ -7,9 +7,6 @@
 # General application configuration
 use Mix.Config
 
-config :threddr,
-  ecto_repos: [Threddr.Repo]
-
 # Configures the endpoint
 config :threddr, ThreddrWeb.Endpoint,
   url: [host: "localhost"],
