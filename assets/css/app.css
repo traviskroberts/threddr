@@ -6,6 +6,20 @@
   margin-bottom: 2rem;
 }
 
+.tweet-link {
+  border: 1px solid hsl(0, 0%, 86%);
+  border-radius: 0 0 5px 5px;
+  border-top: none;
+  display: flex;
+  justify-content: 'center';
+  padding: 5px;
+  position: relative;
+  top: -2px;
+}
+.tweet-link .icon {
+  margin-right: 0.15rem;
+}
+
 .thread-arrow {
   display: block;
   margin: 1rem auto;

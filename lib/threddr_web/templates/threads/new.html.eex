@@ -10,7 +10,12 @@
         <div class="js-tweet">
           <input name="tweets[][num]" type="hidden" value="1" />
           <textarea class="textarea" name="tweets[][text]"></textarea>
-          <span class="tweet-link" id="js-tweet-link-1"></span>
+          <div class="tweet-link is-hidden">
+            <span class="icon">
+              <i class="fas fa-check"></i>
+            </span>
+            <span id="js-tweet-link-1"></span>
+          </div>
         </div>
       </div>
 
@@ -31,6 +36,11 @@
   <div class="js-tweet">
     <input name="tweets[][num]" type="hidden" value="%num%" />
     <textarea class="textarea" name="tweets[][text]"></textarea>
-    <span class="tweet-link" id="js-tweet-link-%num%"></span>
+    <div class="tweet-link is-hidden">
+      <span class="icon">
+        <i class="fas fa-check"></i>
+      </span>
+      <span id="js-tweet-link-%num%"></span>
+    </div>
   </div>
 </script>

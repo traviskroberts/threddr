@@ -18,11 +18,16 @@ channel
 
 channel.on('tweet_posted', payload => {
   const linkHtml = `<a href="${payload.link}" target="_blank">${payload.link}</a>`
-  $(`#js-tweet-link-${payload.index}`).html(linkHtml);
+  const $tweetLink = $(`#js-tweet-link-${payload.index}`);
+  $tweetLink.parent().removeClass('is-hidden');
+  $tweetLink.html(linkHtml);
 
   const total = $('.tweets-container').find('textarea').length;
   if (parseInt(payload.index, 10) === total) {
-    $('#js-submit-thread').removeClass('is-loading');
+    $('#js-submit-thread')
+      .removeClass('is-loading')
+      .prop('disabled', true)
+      .text('Done!');
   }
 });
 
@@ -35,12 +40,16 @@ submitBtn.on('click', (e) => {
     tweets: [],
   };
   $('.js-tweet').each((i, el) => {
-    const index = $(el).find('input').val();
-    const tweet = $(el).find('textarea').val();
+    const $el = $(el)
+    const $textarea = $el.find('textarea');
+    const index = $el.find('input').val();
+    const tweet = $textarea.val();
+    $textarea.prop('disabled', true);
+
     formData.tweets.push({ index, tweet });
   });
-  console.log('> form:', formData);
   channel.push('thread:submit', formData);
+  $('#js-add-tweet').remove();
 });
 
 export default socket;
