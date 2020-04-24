@@ -1,6 +1,19 @@
 /* This file is for your main application css. */
-
 @import "../node_modules/bulma/css/bulma.css";
+
+.main {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.main-section {
+  flex: 1;
+}
+
+.footer {
+  padding: 1.5rem;
+}
 
 .tweets-container {
   margin-bottom: 2rem;

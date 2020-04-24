@@ -8,7 +8,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
   </head>
 
-  <body>
+  <body class="main">
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="container">
         <div class="navbar-brand">
@@ -58,7 +58,7 @@
       </div>
     </nav>
 
-    <section class="section">
+    <section class="section main-section">
       <div class="container">
         <%= if get_flash(@conn, :info) do %>
           <div class="notification is-success" role="alert"><%= get_flash(@conn, :info) %></div>
@@ -71,6 +71,15 @@
         <%= render @view_module, @view_template, assigns %>
       </div>
     </section>
+
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          Built by <a hreff="https://twitter.com/travisroberts">@travisroberts</a>.
+        </p>
+      </div>
+    </footer>
+
     <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>

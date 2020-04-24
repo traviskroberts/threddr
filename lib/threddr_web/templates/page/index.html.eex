@@ -13,13 +13,48 @@
 
 <section class="section columns">
   <div class="column">
-    <h2 class="subtitle has-text-centered">All At Once</h2>
-    <p>Write all of your posts at once, before you send them.</p>
+    <h2 class="subtitle has-text-centered">Compose All At Once</h2>
+    <article class="media">
+      <figure class="media-left">
+        <p class="image is-64x64">
+          <img src="/images/comment.png">
+        </p>
+      </figure>
+      <div class="media-content">
+        <div class="content">
+          <p>Write all of your posts at once, before you send them. Add as many as you want!</p>
+        </div>
+      </div>
+    </article>
   </div>
   <div class="column">
-    <h2 class="subtitle has-text-centered">Item the Second</h2>
+    <h2 class="subtitle has-text-centered">Plan Before You Post</h2>
+    <article class="media">
+      <figure class="media-left">
+        <p class="image is-64x64">
+          <img src="/images/spellcheck.png">
+        </p>
+      </figure>
+      <div class="media-content">
+        <div class="content">
+          <p>Plan and proofread. Make sure everything is correct before you post!</p>
+        </div>
+      </div>
+    </article>
   </div>
   <div class="column">
-    <h2 class="subtitle has-text-centered">Item the Third</h2>
+    <h2 class="subtitle has-text-centered">Super Easy</h2>
+    <article class="media">
+      <figure class="media-left">
+        <p class="image is-64x64">
+          <img src="/images/gear.png">
+        </p>
+      </figure>
+      <div class="media-content">
+        <div class="content">
+          <p>Add items with the push of a button. We do the work for you!</p>
+        </div>
+      </div>
+    </article>
   </div>
 </section>
