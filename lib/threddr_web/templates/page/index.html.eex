@@ -1,3 +1,25 @@
-<h1 class="title">
-  Threddr
-</h1>
+<section class="hero is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Threddr
+      </h1>
+      <h2 class="subtitle">
+        Create Twitter threads easily!
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="section columns">
+  <div class="column">
+    <h2 class="subtitle has-text-centered">All At Once</h2>
+    <p>Write all of your posts at once, before you send them.</p>
+  </div>
+  <div class="column">
+    <h2 class="subtitle has-text-centered">Item the Second</h2>
+  </div>
+  <div class="column">
+    <h2 class="subtitle has-text-centered">Item the Third</h2>
+  </div>
+</section>
