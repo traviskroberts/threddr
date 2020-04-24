@@ -33,6 +33,7 @@ defmodule Threddr.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:distillery, "~> 2.1"},
       {:extwitter, "~> 0.9"},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
